@@ -20,7 +20,7 @@ public class Solution {
     private static long[] longPow9 = new long[19];
     private static long[] longPow10 = new long[19];
 
-    static {
+    static {                                                  // подготовка массивов со степенями цифр
         long i2 = 4, i3 = 9, i4 = 16, i5 = 25, i6 = 36, i7 = 49, i8 = 64, i9 = 81, i10 = 100;
         for (int i = 0; i < 19; i++){
             longPow2[i] = i2;
@@ -44,7 +44,7 @@ public class Solution {
         }
     }
 
-    private static long getLongPow ( int digit, int pow){
+    private static long getLongPow ( int digit, int pow){  // метод возвращает цифру в заданой степени (до 19)
         if (digit == 0) return 0;
         if (digit == 1) return 1;
         if (pow == 0) return 1;
@@ -64,7 +64,7 @@ public class Solution {
         }
     }
 
-    private static Map<Integer,Integer> getDigits(long number){
+    private static Map<Integer,Integer> getDigits(long number){  // метод считет количество цифр в числе
         Map<Integer, Integer> map = new HashMap<>();
         long base10 = 10;
         long base10m = 1;
@@ -86,7 +86,7 @@ public class Solution {
         return map;
     }
 
-    private static TreeSet<Long> getArmstrongN (int N){
+    private static TreeSet<Long> getArmstrongN (int N){ // метод считает числа Армстонга для заданой фиксированой разрядности N
         TreeSet<Long> set = new TreeSet<>();
         if (N == 1){
             for(int i = 0; i < 10; i++) set.add(i*1L);
@@ -158,7 +158,7 @@ public class Solution {
 
 
 
-    public static long[] getNumbers(long N) {
+    public static long[] getNumbers(long N) { // Метод возвращает масив с натуральными числами Армстронга до числа N
         TreeSet<Long> setResult = new TreeSet<>();
         int base10 = 10;
         int digitsCount = 1;
